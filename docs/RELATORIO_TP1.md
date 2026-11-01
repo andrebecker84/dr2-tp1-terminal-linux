@@ -55,7 +55,15 @@ Fonte do documento de entrega (scripts/gerar-documento.py). O que fica entre "so
 
 Fiz os 12 exercícios no bash 5.2 do Ubuntu 24.04.5 LTS, no WSL2 do Windows 11. Os prints foram
 copiados do próprio terminal quando cada comando terminou, sem recorte nem edição. Cada exercício
-gerou o arquivo de evidência pedido, e todos ficam em `~/DR2_TP1`, reproduzidos no anexo.
+gerou o arquivo de evidência pedido, e todos ficam em `~/DR2_TP1`, reproduzidos no anexo. O projeto
+completo é público no GitHub. Os links levam ao relatório técnico, ao repositório e aos arquivos de
+evidência:
+
+[Relatório técnico · docs/RELATORIO_TP1.md](https://github.com/andrebecker84/dr2-tp1-terminal-linux/blob/main/docs/RELATORIO_TP1.md)
+
+https://github.com/andrebecker84/dr2-tp1-terminal-linux
+
+[Arquivos de evidência (.txt) · evidencias/DR2_TP1](https://github.com/andrebecker84/dr2-tp1-terminal-linux/tree/main/evidencias/DR2_TP1)
 
 | Ex. | Tema | Comandos principais | Evidência |
 |---|---|---|---|
