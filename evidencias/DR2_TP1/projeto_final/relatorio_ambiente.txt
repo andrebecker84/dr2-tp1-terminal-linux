@@ -1,0 +1,7 @@
+Relatório do ambiente - 31/10/2026 17:25
+Linux 6.18.54.1-microsoft-standard-WSL2
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       1.9Gi        11Gi        66Mi       2.2Gi        13Gi
+Swap:          4.0Gi          0B       4.0Gi
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdf       1007G  8.4G  948G   1% /

@@ -1,0 +1,16 @@
+DR2-TP1 · Exercício 1 — Papel do sistema operacional Linux
+André Luis Becker · Ubuntu 24.04.5 LTS (WSL2) · bash 5.2.21 · 31/10/2026 17:25
+--------------------------------------------------------------------------------
+INFORMAÇÕES IDENTIFICADAS (comando usado entre colchetes)
+a) Nome do sistema operacional: Linux  [uname -s]
+b) Tipo (baseado em Unix).....: GNU/Linux, da família Unix (Unix-like, POSIX)  [uname -o]
+c) Versão ....................: kernel 6.18.54.1-microsoft-standard-WSL2  [uname -r]
+                                distribuição Ubuntu 24.04.5 LTS  [/etc/os-release]
+d) Arquitetura ...............: x86_64 = 64 bits  [uname -m, getconf LONG_BIT]
+
+PAPEL DO LINUX EM SISTEMAS COMPUTACIONAIS
+- Intermedeia o hardware: escalona processos, gerencia memória, dispositivos e
+  arquivos, e oferece serviços às aplicações por chamadas de sistema.
+- Domina servidores, nuvem, supercomputadores e embarcados, e é a base dos
+  containers (namespaces e cgroups do kernel): estável, aberto e automatizável.
+- Acesso pelo WSL2, que roda um kernel Linux real numa VM leve do Windows 11.

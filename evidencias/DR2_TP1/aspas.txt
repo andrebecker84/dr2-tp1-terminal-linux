@@ -1,0 +1,36 @@
+DR2-TP1 · Exercício 11 — Aspas simples e duplas
+André Luis Becker · Ubuntu 24.04.5 LTS (WSL2) · bash 5.2.21 · 31/10/2026 17:25
+--------------------------------------------------------------------------------
+REGISTRO DA SESSÃO (comandos e saídas, na ordem de execução)
+becker@alienwarePC:~/DR2_TP1$ # Exercício 11 - aspas simples e duplas
+becker@alienwarePC:~/DR2_TP1$ mkdir -v ex11_aspas && cd ex11_aspas
+mkdir: created directory 'ex11_aspas'
+becker@alienwarePC:~/DR2_TP1/ex11_aspas$ touch "meu arquivo.txt"
+becker@alienwarePC:~/DR2_TP1/ex11_aspas$ touch meu arquivo sem aspas.txt
+becker@alienwarePC:~/DR2_TP1/ex11_aspas$ ls -l
+total 0
+-rw-r--r-- 1 becker becker 0 Oct 31 17:25  arquivo
+-rw-r--r-- 1 becker becker 0 Oct 31 17:25  aspas.txt
+-rw-r--r-- 1 becker becker 0 Oct 31 17:25  meu
+-rw-r--r-- 1 becker becker 0 Oct 31 17:25 'meu arquivo.txt'
+-rw-r--r-- 1 becker becker 0 Oct 31 17:25  sem
+becker@alienwarePC:~/DR2_TP1/ex11_aspas$ rm -v meu arquivo sem aspas.txt
+removed 'meu'
+removed 'arquivo'
+removed 'sem'
+removed 'aspas.txt'
+becker@alienwarePC:~/DR2_TP1/ex11_aspas$ echo "Usuário: $USER | Hoje: $(date +%d/%m/%Y)"
+Usuário: becker | Hoje: 31/10/2026
+becker@alienwarePC:~/DR2_TP1/ex11_aspas$ echo 'Usuário: $USER | Hoje: $(date +%d/%m/%Y)'
+Usuário: $USER | Hoje: $(date +%d/%m/%Y)
+becker@alienwarePC:~/DR2_TP1/ex11_aspas$ echo "Preço: \$10 e \"aspas\" internas"
+Preço: $10 e "aspas" internas
+becker@alienwarePC:~/DR2_TP1/ex11_aspas$ cd ..
+--------------------------------------------------------------------------------
+OBSERVAÇÕES
+- touch "meu arquivo.txt" criou UM arquivo; sem aspas, o mesmo comando criou
+  QUATRO (meu, arquivo, sem, aspas.txt), removidos com rm -v.
+- Aspas duplas agrupam e expandem $USER e $(date); aspas simples mantêm tudo
+  literal. Dentro das duplas, \$ e \" imprimem os caracteres literais.
+- Regra: duplas para usar variáveis preservando espaços ("$arquivo");
+  simples para textos que devem chegar intactos (padrões do grep, alias).

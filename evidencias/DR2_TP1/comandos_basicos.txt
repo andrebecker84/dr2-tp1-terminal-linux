@@ -1,0 +1,64 @@
+DR2-TP1 · Exercício 3 — Comandos básicos: date, cal, df, free e exit
+André Luis Becker · Ubuntu 24.04.5 LTS (WSL2) · bash 5.2.21 · 31/10/2026 17:25
+--------------------------------------------------------------------------------
+REGISTRO DA SESSÃO (comandos e saídas, na ordem de execução)
+becker@alienwarePC:~/DR2_TP1$ # Exercício 3 - comandos básicos: date, cal, df, free e exit
+becker@alienwarePC:~/DR2_TP1$ date
+Sat Oct 31 17:25:38 -03 2026
+becker@alienwarePC:~/DR2_TP1$ cal
+Command 'cal' not found, but can be installed with:
+sudo apt install ncal
+becker@alienwarePC:~/DR2_TP1$ apt list --installed ncal 2>/dev/null
+Listing... Done
+ncal/noble,now 12.1.8 amd64 [installed]
+becker@alienwarePC:~/DR2_TP1$ cal
+    October 2026      
+Su Mo Tu We Th Fr Sa  
+             1  2  3  
+ 4  5  6  7  8  9 10  
+11 12 13 14 15 16 17  
+18 19 20 21 22 23 24  
+25 26 27 28 29 30 31  
+becker@alienwarePC:~/DR2_TP1$ df
+Filesystem                                1K-blocks      Used Available Use% Mounted on
+none                                        8189560         0   8189560   0% /usr/lib/modules/6.18.54.1-microsoft-standard-WSL2
+/dev/sdb                                      98720     98720         0 100% /usr/lib/linux-tools/6.18.54.1-microsoft-standard-WSL2
+none                                        8189560     22932   8166628   1% /mnt/wsl
+none                                        8189560       736   8188824   1% /mnt/wsl/docker-desktop/shared-sockets/host-services
+/dev/loop0                                   807332    807332         0 100% /mnt/wsl/docker-desktop/cli-tools
+drivers                                   980137980 786847036 193290944  81% /usr/lib/wsl/drivers
+/dev/sdf                                 1055762868   8767684 993291712   1% /
+none                                        8189560         0   8189560   0% /usr/lib/wsl/lib
+rootfs                                      8184432      3396   8181036   1% /init
+none                                        8189560     23804   8165756   1% /run
+none                                        8189560         0   8189560   0% /run/lock
+none                                        8189560         0   8189560   0% /run/shm
+C:\                                       980137980 786847036 193290944  81% /mnt/c
+snapfuse                                       2048      2048         0 100% /snap/btop/1076
+snapfuse                                      68480     68480         0 100% /snap/core24/2124
+snapfuse                                      45824     45824         0 100% /snap/snapd/28254
+tmpfs                                       1637912        20   1637892   1% /run/user/1000
+tmpfs                                       1637912        16   1637896   1% /run/user/0
+C:\Program Files\Docker\Docker\resources  980137980 786847036 193290944  81% /Docker/host
+snapfuse                                      75904     75904         0 100% /snap/core22/2987
+snapfuse                                      37760     37760         0 100% /snap/bw/105
+becker@alienwarePC:~/DR2_TP1$ free
+               total        used        free      shared  buff/cache   available
+Mem:        16379120     2089132    12341236       68388     2253324    14289988
+Swap:        4194304           0     4194304
+becker@alienwarePC:~/DR2_TP1$ echo "Nível do shell: $SHLVL"
+Nível do shell: 2
+becker@alienwarePC:~/DR2_TP1$ bash
+becker@alienwarePC:~/DR2_TP1$ echo "Nível do shell: $SHLVL (shell filho)"
+Nível do shell: 3 (shell filho)
+becker@alienwarePC:~/DR2_TP1$ exit
+exit
+becker@alienwarePC:~/DR2_TP1$ echo "Nível do shell: $SHLVL (de volta ao original)"
+Nível do shell: 2 (de volta ao original)
+--------------------------------------------------------------------------------
+INFORMAÇÕES DE ARMAZENAMENTO E MEMÓRIA
+- ARMAZENAMENTO: df - tamanho, uso e espaço livre de cada sistema de arquivos (KiB).
+- MEMÓRIA......: free - RAM e swap: total, usada, livre e disponível (KiB).
+- date: data, hora e fuso · cal: calendário do mês · exit: encerra o shell.
+- O cal não vinha na instalação mínima do Ubuntu do WSL: instalei o pacote ncal.
+- O exit rodou num shell filho (SHLVL 3 -> 2), para não fechar o terminal.

@@ -1,0 +1,13 @@
+DR2-TP1 · Exercício 7 — Manipulação de arquivos e diretórios
+André Luis Becker · Ubuntu 24.04.5 LTS (WSL2) · bash 5.2.21 · 31/10/2026 17:25
+--------------------------------------------------------------------------------
+COMANDOS UTILIZADOS, NA ORDEM
+1. mkdir -v tp_linux                    cria o diretório
+2. cd tp_linux                          entra nele
+3. echo "Arquivo de teste do TP1 - DR2" > teste.txt   cria o arquivo, já com conteúdo
+4. cp -v teste.txt teste_backup.txt     copia o arquivo
+5. ls -l                                confere os dois arquivos
+6. rm -iv teste.txt  (resposta: y)      remove o original, com confirmação
+7. ls -l                                confere que só restou o backup
+8. cat teste_backup.txt                 comprova que a cópia preservou o conteúdo
+9. cd ..                                volta ao diretório de trabalho

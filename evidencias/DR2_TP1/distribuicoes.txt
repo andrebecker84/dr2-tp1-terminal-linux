@@ -1,0 +1,11 @@
+DR2-TP1 · Exercício 2 — Distribuições Linux e contextos de uso
+André Luis Becker · Ubuntu 24.04.5 LTS (WSL2) · bash 5.2.21 · 31/10/2026 17:25
+--------------------------------------------------------------------------------
+DISTRIBUIÇÃO INSTALADA (lsb_release -a, /etc/os-release e /etc/issue)
+Ubuntu 24.04.5 LTS (noble) · família debian · pacotes .deb com APT
+
+OUTRAS DISTRIBUIÇÕES E CONTEXTO TÍPICO DE USO
+- Debian (stable) -> servidores: ciclo conservador e pacotes muito testados;
+  prioriza estabilidade e segurança.
+- Alpine Linux    -> containers: imagem de poucos megabytes (musl e BusyBox),
+  imagens menores e menor superfície de ataque.

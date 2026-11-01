@@ -1,0 +1,64 @@
+DR2-TP1 · Exercício 4 — Recursos computacionais: CPU, memória e disco
+André Luis Becker · Ubuntu 24.04.5 LTS (WSL2) · bash 5.2.21 · 31/10/2026 17:25
+--------------------------------------------------------------------------------
+REGISTRO DA SESSÃO (comandos e saídas, na ordem de execução)
+### CPU ###
+becker@alienwarePC:~/DR2_TP1$ # ===== Exercício 4 - CPU =====
+becker@alienwarePC:~/DR2_TP1$ lscpu | grep -E '^(Architecture|CPU op-mode|CPU\(s\)|Vendor ID|Model name|Thread|Core|Socket|Virtualization|Hypervisor|L[123])'
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+CPU(s):                                  10
+Vendor ID:                               GenuineIntel
+Model name:                              12th Gen Intel(R) Core(TM) i9-12900H
+Thread(s) per core:                      2
+Core(s) per socket:                      5
+Socket(s):                               1
+Virtualization:                          VT-x
+Hypervisor vendor:                       Microsoft
+Virtualization type:                     full
+L1d cache:                               240 KiB (5 instances)
+L1i cache:                               160 KiB (5 instances)
+L2 cache:                                6.3 MiB (5 instances)
+L3 cache:                                24 MiB (1 instance)
+becker@alienwarePC:~/DR2_TP1$ nproc
+10
+becker@alienwarePC:~/DR2_TP1$ grep -m1 'model name' /proc/cpuinfo
+model name      : 12th Gen Intel(R) Core(TM) i9-12900H
+
+### MEMÓRIA ###
+becker@alienwarePC:~/DR2_TP1$ # ===== Exercício 4 - MEMÓRIA =====
+becker@alienwarePC:~/DR2_TP1$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       2.0Gi        11Gi        66Mi       2.1Gi        13Gi
+Swap:          4.0Gi          0B       4.0Gi
+becker@alienwarePC:~/DR2_TP1$ grep -E '^(MemTotal|MemAvailable|SwapTotal|SwapFree):' /proc/meminfo
+MemTotal:       16379120 kB
+MemAvailable:   14290348 kB
+SwapTotal:       4194304 kB
+SwapFree:        4194304 kB
+
+### DISCO ###
+becker@alienwarePC:~/DR2_TP1$ # ===== Exercício 4 - DISCO =====
+becker@alienwarePC:~/DR2_TP1$ df -hT / /mnt/c
+Filesystem     Type  Size  Used Avail Use% Mounted on
+/dev/sdf       ext4 1007G  8.4G  948G   1% /
+C:\            9p    935G  751G  185G  81% /mnt/c
+becker@alienwarePC:~/DR2_TP1$ lsblk -o NAME,SIZE,TYPE,MOUNTPOINTS
+NAME    SIZE TYPE MOUNTPOINTS
+loop0 788.4M loop /mnt/wsl/docker-desktop/cli-tools
+loop1 637.8M loop 
+sda   722.9M disk 
+sdb      97M disk /usr/lib/linux-tools/6.18.54.1-microsoft-standard-WSL2
+                  /usr/src/linux-headers-6.18.54.1-microsoft-standard-WSL2
+sdc       4G disk [SWAP]
+sdd       1T disk 
+sde     140M disk 
+sdf       1T disk /snap
+                  /run/user
+                  /
+sdg       1T disk 
+--------------------------------------------------------------------------------
+RESUMO
+- CPU....: 12th Gen Intel(R) Core(TM) i9-12900H, 10 CPUs lógicas visíveis no WSL
+- MEMÓRIA: 15Gi de RAM (13Gi disponíveis), swap de 4.0Gi
+- DISCO..: raiz ext4 de 1007G (1% em uso) e o drive C: do Windows em /mnt/c

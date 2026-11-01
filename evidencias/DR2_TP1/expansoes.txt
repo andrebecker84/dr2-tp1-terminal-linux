@@ -1,0 +1,25 @@
+DR2-TP1 · Exercício 10 — Expansões do shell
+André Luis Becker · Ubuntu 24.04.5 LTS (WSL2) · bash 5.2.21 · 31/10/2026 17:25
+--------------------------------------------------------------------------------
+REGISTRO DA SESSÃO (comandos e saídas, na ordem de execução)
+becker@alienwarePC:~/DR2_TP1$ # Exercício 10 - expansões do shell
+becker@alienwarePC:~/DR2_TP1$ ls /var/log/*.log
+/var/log/alternatives.log  /var/log/dpkg.log        /var/log/ubuntu-advantage-apt-hook.log
+/var/log/auth.log          /var/log/fontconfig.log
+/var/log/bootstrap.log     /var/log/kern.log
+becker@alienwarePC:~/DR2_TP1$ echo /var/log/*.log
+/var/log/alternatives.log /var/log/auth.log /var/log/bootstrap.log /var/log/dpkg.log /var/log/fontconfig.log /var/log/kern.log /var/log/ubuntu-advantage-apt-hook.log
+becker@alienwarePC:~/DR2_TP1$ mkdir -v ex10_expansoes
+mkdir: created directory 'ex10_expansoes'
+becker@alienwarePC:~/DR2_TP1$ touch ex10_expansoes/servico_{a,b,c}.log ex10_expansoes/relatorio_{01..03}.txt
+becker@alienwarePC:~/DR2_TP1$ ls ex10_expansoes
+relatorio_01.txt  relatorio_02.txt  relatorio_03.txt  servico_a.log  servico_b.log  servico_c.log
+becker@alienwarePC:~/DR2_TP1$ ls ex10_expansoes/*.log
+ex10_expansoes/servico_a.log  ex10_expansoes/servico_b.log  ex10_expansoes/servico_c.log
+becker@alienwarePC:~/DR2_TP1$ ls ex10_expansoes/relatorio_0[12].txt
+ex10_expansoes/relatorio_01.txt  ex10_expansoes/relatorio_02.txt
+--------------------------------------------------------------------------------
+OBSERVAÇÕES
+- *.log é expandido pelo shell antes do comando: o echo imprime a mesma lista.
+- {a,b,c} e {01..03} geraram 6 nomes num único touch (o zero à esquerda é mantido).
+- [12] casa com um dos caracteres da lista: seleciona só relatorio_01 e 02.

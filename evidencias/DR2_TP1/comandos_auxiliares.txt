@@ -1,0 +1,48 @@
+DR2-TP1 · Exercício 8 — Comandos auxiliares e alias
+André Luis Becker · Ubuntu 24.04.5 LTS (WSL2) · bash 5.2.21 · 31/10/2026 17:25
+--------------------------------------------------------------------------------
+REGISTRO DA SESSÃO (comandos e saídas, na ordem de execução)
+becker@alienwarePC:~/DR2_TP1$ # Exercício 8 - investigando o ls com type, which e help
+becker@alienwarePC:~/DR2_TP1$ type -a ls
+ls is aliased to `ls --color=auto'
+ls is /usr/bin/ls
+ls is /bin/ls
+becker@alienwarePC:~/DR2_TP1$ which ls
+/usr/bin/ls
+becker@alienwarePC:~/DR2_TP1$ help ls
+bash: help: no help topics match `ls'.  Try `help help' or `man -k ls' or `info ls'.
+becker@alienwarePC:~/DR2_TP1$ ls --help | head -n 3
+Usage: ls [OPTION]... [FILE]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+becker@alienwarePC:~/DR2_TP1$ # Exercício 8 - investigando o rm com whatis e apropos
+becker@alienwarePC:~/DR2_TP1$ whatis rm
+rm (1)               - remove files or directories
+becker@alienwarePC:~/DR2_TP1$ apropos 'remove files'
+git-rm (1)           - Remove files from the working tree and from the index
+rm (1)               - remove files or directories
+becker@alienwarePC:~/DR2_TP1$ man rm
+becker@alienwarePC:~/DR2_TP1$ info rm
+becker@alienwarePC:~/DR2_TP1$ # Exercício 8 - alias simples para o ls
+becker@alienwarePC:~/DR2_TP1$ alias lsl='ls -lh --group-directories-first'
+becker@alienwarePC:~/DR2_TP1$ type lsl
+lsl is aliased to `ls -lh --group-directories-first'
+becker@alienwarePC:~/DR2_TP1$ lsl
+total 36K
+drwxr-xr-x 2 becker becker 4.0K Oct 31 17:25 tp_linux
+-rw-r--r-- 1 becker becker 4.1K Oct 31 17:25 comandos_basicos.txt
+-rw-r--r-- 1 becker becker  667 Oct 31 17:25 distribuicoes.txt
+-rw-r--r-- 1 becker becker  885 Oct 31 17:25 manipulacao.txt
+-rw-r--r-- 1 becker becker  615 Oct 31 17:25 navegacao.txt
+-rw-r--r-- 1 becker becker 3.1K Oct 31 17:25 recursos.txt
+-rw-r--r-- 1 becker becker 1.1K Oct 31 17:25 sistema_linux.txt
+-rw-r--r-- 1 becker becker 1.4K Oct 31 17:25 visualizacao.txt
+becker@alienwarePC:~/DR2_TP1$ echo "alias lsl='ls -lh --group-directories-first'" >> ~/.bash_aliases
+--------------------------------------------------------------------------------
+CONCLUSÕES
+- type: no bash, ls é um alias (ls --color=auto) para o executável /usr/bin/ls.
+- which: mostra só o executável no PATH; não enxerga aliases nem builtins.
+- help ls falha porque help só documenta builtins do bash; para o ls: ls --help.
+- whatis: descrição de uma linha · apropos: busca o comando pelo assunto ·
+  man rm: manual completo (-i, -r, -f, --preserve-root) · info rm: manual GNU.
+- Alias lsl criado, testado e gravado em ~/.bash_aliases (vale em todo novo bash).

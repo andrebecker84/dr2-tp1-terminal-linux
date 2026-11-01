@@ -1,0 +1,30 @@
+DR2-TP1 · Exercício 12 — Projeto final: fluxo integrado
+André Luis Becker · Ubuntu 24.04.5 LTS (WSL2) · bash 5.2.21 · 31/10/2026 17:25
+--------------------------------------------------------------------------------
+REGISTRO DA SESSÃO (comandos e saídas, na ordem de execução)
+becker@alienwarePC:~/DR2_TP1$ # Exercício 12 - projeto final: fluxo integrado
+becker@alienwarePC:~/DR2_TP1$ mkdir -v projeto_final && cd projeto_final
+mkdir: created directory 'projeto_final'
+becker@alienwarePC:~/DR2_TP1/projeto_final$ { echo "Relatório do ambiente - $(date '+%d/%m/%Y %H:%M')"; uname -sr; free -h; df -h /; } > relatorio_ambiente.txt
+becker@alienwarePC:~/DR2_TP1/projeto_final$ ls -l
+total 4
+-rw-r--r-- 1 becker becker 378 Oct 31 17:25 relatorio_ambiente.txt
+becker@alienwarePC:~/DR2_TP1/projeto_final$ file relatorio_ambiente.txt
+relatorio_ambiente.txt: Unicode text, UTF-8 text
+becker@alienwarePC:~/DR2_TP1/projeto_final$ less relatorio_ambiente.txt
+becker@alienwarePC:~/DR2_TP1/projeto_final$ whatis file less
+FILE (3type)         - input/output stream
+file (1)             - determine file type
+less (1)             - opposite of more
+becker@alienwarePC:~/DR2_TP1/projeto_final$ type file less
+file is hashed (/usr/bin/file)
+less is hashed (/usr/bin/less)
+becker@alienwarePC:~/DR2_TP1/projeto_final$ cd ..
+--------------------------------------------------------------------------------
+PROCESSO
+1. mkdir + cd: cria projeto_final e entra nele.
+2. { date; uname; free; df; } > relatorio_ambiente.txt: gera o arquivo a inspecionar.
+3. ls -l: confirma o arquivo (tamanho, permissões, dono e data).
+4. file: identifica o tipo pelo conteúdo (texto Unicode UTF-8, por causa dos acentos).
+5. less: visualiza o conteúdo sem alterá-lo.
+6. whatis e type: investigam os comandos usados (descrição e localização).

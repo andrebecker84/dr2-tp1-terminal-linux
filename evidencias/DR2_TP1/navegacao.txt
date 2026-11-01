@@ -1,0 +1,10 @@
+DR2-TP1 · Exercício 5 — Navegação pelo sistema de arquivos
+André Luis Becker · Ubuntu 24.04.5 LTS (WSL2) · bash 5.2.21 · 31/10/2026 17:25
+--------------------------------------------------------------------------------
+COMANDOS UTILIZADOS, NA ORDEM
+1. cd /var/log     navega até /var/log por caminho absoluto
+2. pwd             confirma o diretório atual: /var/log
+3. ls              lista os logs do sistema (syslog, auth.log, dpkg.log...)
+4. cd ~            retorna ao diretório pessoal ("~" = $HOME)
+5. pwd             confirma: /home/becker
+6. cd ~/DR2_TP1    volta ao diretório de trabalho do TP

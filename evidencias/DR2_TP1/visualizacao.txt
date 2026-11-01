@@ -1,0 +1,26 @@
+DR2-TP1 · Exercício 6 — Visualização e tipos de arquivos
+André Luis Becker · Ubuntu 24.04.5 LTS (WSL2) · bash 5.2.21 · 31/10/2026 17:25
+--------------------------------------------------------------------------------
+REGISTRO DA SESSÃO (comandos e saídas, na ordem de execução)
+becker@alienwarePC:~/DR2_TP1$ # Exercício 6 - visualização e tipos de arquivos
+becker@alienwarePC:~/DR2_TP1$ cd ~
+becker@alienwarePC:~$ ls
+DR1_TP1  DR2_TP1  projetos  snap
+becker@alienwarePC:~$ ls -l
+total 12
+drwxr-xr-x 5 becker becker 4096 Oct 26 23:06 DR1_TP1
+drwxr-xr-x 2 becker becker 4096 Oct 31 17:25 DR2_TP1
+lrwxrwxrwx 1 becker becker   36 May  2 16:07 projetos -> /mnt/c/Users/becke/OneDrive/projetos
+drwx------ 4 becker becker 4096 Oct 31 15:28 snap
+becker@alienwarePC:~$ file .bashrc DR2_TP1 projetos
+.bashrc:  ASCII text
+DR2_TP1:  directory
+projetos: symbolic link to /mnt/c/Users/becke/OneDrive/projetos
+becker@alienwarePC:~$ cd ~/DR2_TP1
+becker@alienwarePC:~/DR2_TP1$ less /var/log/dpkg.log
+--------------------------------------------------------------------------------
+RESULTADOS
+- Três arquivos de tipos distintos: .bashrc = texto, DR2_TP1 = diretório,
+  projetos = link simbólico. O file decide pelo conteúdo, não pela extensão.
+- less /var/log/dpkg.log: log visualizado no paginador, que só lê o arquivo,
+  carrega por partes e permite busca (/texto); sai com q.
