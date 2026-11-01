@@ -1,16 +1,17 @@
 # O Terminal Linux na Prática
 
->**DR2-TP1 · Bloco Ciência da Computação**
-Disciplina: Sistemas Operacionais com Linux e Python
-Trimestre: 26E4_2
-Professor: Leonardo Silva da Gloria
-Aluno: André Luis Becker
-Sala: GRLENGR2C2-N2-L1
+> **DR2-TP1 · Bloco Ciência da Computação**\
+> Disciplina: Sistemas Operacionais com Linux e Python\
+> Trimestre: 26E4_2\
+> Professor: Leonardo Silva da Gloria\
+> Aluno: André Luis Becker\
+> Sala: GRLENGR2C2-N2-L1\
+> Repositório: [andrebecker84/dr2-tp1-terminal-linux](https://github.com/andrebecker84/dr2-tp1-terminal-linux)
 
 <!--
 Fonte do documento de entrega (scripts/gerar-documento.py). O que fica entre "so-github" e
-"/so-github" e as seções "### Enunciado" aparecem só aqui, no GitHub. Nas linhas
-"<!-- arquivo: X -->", o gerador insere no PDF o conteúdo integral de evidencias/DR2_TP1/X.
+"/so-github" e as seções "### Enunciado" aparecem só aqui, no GitHub. Em cada comentário
+"arquivo: X" do anexo, o gerador insere no PDF o conteúdo integral de evidencias/DR2_TP1/X.
 -->
 
 <!-- so-github -->
